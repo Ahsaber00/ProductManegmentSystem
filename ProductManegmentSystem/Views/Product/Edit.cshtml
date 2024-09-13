@@ -1,0 +1,71 @@
+﻿@{
+    @model ProductModelUsedInCreateAndEdit
+
+}
+<center>
+    <h1>Edit Product</h1>
+</center>
+<br />
+
+
+<form asp-action="Edit" enctype="multipart/form-data">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+    <input name="Id" type="hidden" value="@ViewData["Id"]" />
+    <div class="form-group mt-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" value="@Model.Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" class="form-control" value="@Model.Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" value="@Model.Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="Quantity" class="form-label"></label>
+        <input asp-for="Quantity" class="form-control" value="@Model.Quantity" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label>Current image:   </label>
+        <img src="/products/@ViewData["ImageFileName"]" alt="Alternate Text" width="150" />
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="ImageFile" class="form-label"></label>
+        <input asp-for="ImageFile" class="form-control" value="@Model.ImageFile" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label asp-for="Category" class="form-label"></label>
+        <select asp-items="ViewBag.Categories" asp-for="CategoryId" class="form-control"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="my-4">
+        <input type="submit" name="name" value="Edit Product" class="btn btn-primary" />
+        <a asp-controller="Product" asp-action="Index" role="button" class="btn btn-outline-dark">Cancel</a>
+    </div>
+
+
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+

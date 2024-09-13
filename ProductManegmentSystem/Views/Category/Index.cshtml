@@ -1,0 +1,41 @@
+﻿@{
+    @model IEnumerable<Category>
+
+}
+
+<center>
+    <h1>Categories Portal</h1>
+</center>
+<br />
+<a href="~/Category/Create" class="btn btn-success">Create New</a>
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th scope="row">@category.Id</th>
+                <th>@category.Name</th>
+                <th scope="col">
+                    <a asp-controller="Category" asp-action="ViewDetails" asp-route-id="@category.Id" class="btn btn-primary mx-2">View</a>
+                    <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-warning mx-2">Edit</a>
+                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger mx-2">Delete</a>
+                </th>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+

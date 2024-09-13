@@ -1,0 +1,31 @@
+﻿@{
+    @model Category
+
+}
+
+<h2 class="text-danger">Delete Category</h2>
+
+<p class="text-danger">Are you sure you want to delete this Category?</p>
+
+<div>
+    <h4>@Model.Name</h4>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-2">
+        <h5>Description</h5>
+    </div>
+    <div class="col-10">@Model.Description</div>
+</div>
+
+
+
+<hr />
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="submit" name="confirm" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-primary" role="button">Cancel</a>
+</form>

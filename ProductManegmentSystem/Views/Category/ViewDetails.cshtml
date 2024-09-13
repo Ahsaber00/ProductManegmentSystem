@@ -1,0 +1,13 @@
+﻿@{
+    @model Category
+
+}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Category Id: @Model.Id</h5>
+        <h5 class="card-title">Category Name: @Model.Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Category description:@Model.Description </h6>
+        <a href="~/Category/Index" class="btn btn-primary my-3">Back</a>
+    </div>
+</div>

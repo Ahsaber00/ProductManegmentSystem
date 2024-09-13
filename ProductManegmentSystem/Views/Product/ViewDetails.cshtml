@@ -1,0 +1,17 @@
+﻿
+@{
+    @model Product
+}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Product Name: @Model.Title</h5>
+        <h5 class="card-title">Department Name: @Model.Category!.Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Product Id: @Model.Id</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Items in stock: @Model.Quantity</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Product Price: @Model.Price</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Product Description: @Model.Description</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><img src="/products/@Model.ImageFileName" width="100" alt="Alternate Text" /></h6>
+        <a href="~/Product/Index" class="btn btn-primary my-3">Back</a>
+    </div>
+</div>
